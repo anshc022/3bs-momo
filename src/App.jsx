@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Navbar from './components/Navbar';
 import Cart from './components/Cart';
@@ -8,7 +8,7 @@ import OrderTrack from './pages/OrderTrack';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CartProvider>
         <Navbar />
         <Cart />
@@ -18,6 +18,6 @@ export default function App() {
           <Route path="/track/:orderId" element={<OrderTrack />} />
         </Routes>
       </CartProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
